@@ -1,13 +1,43 @@
-.insight_icon_asc::after { content: " ↑"; } .insight_icon_desc::after { content: " ↓"; }
 
-#insight_settings { height: 700px; width: 100px; }
-#insight_master_search { width: 90px; }
-.insight_select_multiple { width: 90px; }
+.insight_container {
+    padding: 5px;
+    display: inline-grid;
+    grid-template-areas:
+    'settings top'
+    'settings pivot'
+    'settings table';
+}
+.insight_settings_container { grid-area: settings; margin-right: 10px; }
+.insight_top_container { grid-area: top; margin-bottom: 3px; }
+.insight_pivot_container { grid-area: pivot; margin-bottom: 3px; }
+.insight_table_container { grid-area: table; }
 
-#insight_pivot th { padding: 0px 2px; font: 14px; font-weight: normal; text-align: center; vertical-align: middle; }
-#insight_pivot td { padding: 0px 2px; font: 14px; font-weight: normal; text-align: center; vertical-align: middle; }
-#insight_pivot .label_row { text-align: left; }
-#insight_pivot .label_row_totals { text-align: right; }
+.insight_button { cursor: pointer; margin: 0px; padding: 2px 5px; background-color: #2185d0; color: white; display: inline-block; font-size: 13px; border: none; border-radius: 4px; text-align: center; opacity: 0.95; transition: 0.3s; }
+.insight_button:hover { opacity: 1 }
+.insight_settings_button_restore { background-color: grey; }
+.insight_master_search { margin: 0px; padding: 3px; font-size: 12px; width: 120px; }
+.insight_master_search:focus { outline: none; }
 
-#insight_table th { padding: 0px 2px; white-space: nowrap; }
-#insight_table td { padding: 0px 2px; }
+.insight_settings_pivot_labels { font-size: 14px; }
+.insight_settings_pivot_select { all: unset; cursor: pointer; width: 130px; margin-bottom: 2px; padding: 2px; border: 1px solid #ededed; border-radius: 4px; }
+.insight_settings_pivot_select:hover { background: #f9fafb; }
+
+.insight_pivot { font-size: 15px; font-weight: normal; border-collapse: collapse; }
+.insight_pivot th { color: black; background: #f9fafb; border: 1px solid #ededed; padding: 0px 3px; text-align: center; vertical-align: middle; white-space: nowrap; overflow: hidden; }
+.insight_pivot td { color: black; background: #ffffff; border: 1px solid #ededed; padding: 0px 3px; text-align: center; vertical-align: middle; }
+.insight_pivot .label_row { text-align: left; }
+
+.insight_pivot .label_row_names { text-align: left; }
+.insight_pivot .label_col_names { text-align: right; }
+
+.insight_pivot .label_row_totals { cursor: pointer; text-align: right; } .insight_pivot .label_row_totals:hover { background: #f9fafb; }
+.insight_pivot .label_col_totals { cursor: pointer; } .insight_pivot .label_col_totals:hover { background: #f9fafb; }
+.insight_pivot .cell_value { cursor: pointer; } .insight_pivot .cell_value:hover { background: #f9fafb; }
+
+.insight_table { font-size: 15px; font-weight: normal; border-collapse: collapse; }
+.insight_table tr:hover { background-color: #ddd; }
+.insight_table th { color: black; background: #f9fafb; border: 1px solid #ededed; padding: 0px 3px; white-space: nowrap; overflow: hidden; cursor: pointer; }
+.insight_table td { color: black; background: #ffffff; border: 1px solid #ededed; padding: 0px 3px; white-space: nowrap; overflow: hidden; }
+
+.insight_icon_asc::after { content: " ↑"; }
+.insight_icon_desc::after { content: " ↓"; }
